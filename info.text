@@ -1,0 +1,44 @@
+//Cucumber (Gherkin) Full Support.
+install this extension for .feature file 
+----------------------------------------------------
+npm init
+npm install cypress --save-dev
+npm install npx
+npx cypress open
+
+https://kailash-pathak.medium.com/cypress-13-integration-with-bdd-cucumber-pom-a367f534b363
+BDD:
+from above link start from Installing Cucumber
+Step 1:(do all steps)
+
+npm install --save-dev cypress-cucumber-preprocessor
+
+check for step no 4 give proper path
+
+
+-------------------------------------------------
+
+to use @variable for running single or only targeted test sceniro 
+followung lines need to save in cypress.config.js
+
+  env: {
+    "TAGS": "@smoke"
+  }, 
+---before e2e block-----
+
+  following commands is used to running
+  # npx cypress run --env TAGS="@smoke" --headed --browser edge
+-------------------------------------------------
+
+----to create your own cmd ---------
+create commandline command
+create command scripts in package.json like following
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "smoke-test" : "npx cypress run --env TAGS='@smoke' --headed --browser edge"
+  },
+
+  to run command
+  npm run smoke-test
+
+  -------------------------------------------------
