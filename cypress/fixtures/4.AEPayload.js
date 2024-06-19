@@ -1,6 +1,6 @@
 export default [{
     username: 'Anjali',
-    useremail: `anjalip${Math.floor(Math.random(20000 + 1) * 10)}@gmail.com`,
+    useremail: `anjalip${Math.floor(Math.random(20000 + 1) * 50)}@gmail.com`,
     title: 'Mrs',
     password: 'abc123',
     dd: 18,
@@ -21,7 +21,7 @@ export default [{
 },
 {
     username: 'siya',
-    useremail: `siyad${Math.floor(Math.random(20000 + 1) * 10)}@gmail.com`,
+    useremail: `siyad${Math.floor(Math.random(20000 + 1) * 50)}@gmail.com`,
     title: 'Mrs',
     password: 'abc123',
     dd: 8,

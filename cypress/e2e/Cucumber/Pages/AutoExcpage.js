@@ -9,7 +9,7 @@ export default class AExercise {
         signupbtn: '[data-qa="signup-button"]',
         titleMr: '[value="Mr"]',
         titleMrs: '[value="Mrs"]',
-        password: '[name="password"]',
+        password: '[id="password"]',
         dd: '[name="days"]',
         mm: '[name="months"]',
         yy: '[id="years"]',
@@ -33,8 +33,6 @@ export default class AExercise {
         login: '[data-qa="login-button"]',
         logintextvalidation: 'a>b'
 
-
-
     }
 
     visiturl() {
@@ -45,30 +43,30 @@ export default class AExercise {
         cy.get(css).click()
     }
 
-    newUserSignup(data2) {
-        cy.get(this.selectors.username).type(data2.username)
-        cy.get(this.selectors.useremail).type(data2.useremail)
+    newUserSignup(user) {
+        cy.get(this.selectors.username).type(user.username)
+        cy.get(this.selectors.useremail).type(user.useremail)
 
     }
 
-    accountinfo(title, data2) {
+    accountinfo(title, user) {
         cy.get(title).check()
-        cy.get(this.selectors.password).type(data2.password)
-        cy.get(this.selectors.dd).type(data2.dd)
-        cy.get(this.selectors.mm).type(data2.mm)
-        cy.get(this.selectors.yy).type(data2.yy)
+        cy.get(this.selectors.password).type(user.password)
+        cy.get(this.selectors.dd).type(user.dd)
+        cy.get(this.selectors.mm).type(user.mm)
+        cy.get(this.selectors.yy).type(user.yy)
         cy.get(this.selectors.cheakbox1).check()
         cy.get(this.selectors.cheakbox2).check()
-        cy.get(this.selectors.firstname).type(data2.firstname)
-        cy.get(this.selectors.lastname).type(data2.lastname)
-        cy.get(this.selectors.company).type(data2.company)
-        cy.get(this.selectors.address1).type(data2.address1)
-        cy.get(this.selectors.address2).type(data2.address2)
-        cy.get(this.selectors.country).select(data2.country)
-        cy.get(this.selectors.state).type(data2.state)
-        cy.get(this.selectors.city).type(data2.city)
-        cy.get(this.selectors.zipcode).type(data2.zipcode)
-        cy.get(this.selectors.mobileno).type(data2.mobileno)
+        cy.get(this.selectors.firstname).type(user.firstname)
+        cy.get(this.selectors.lastname).type(user.lastname)
+        cy.get(this.selectors.company).type(user.company)
+        cy.get(this.selectors.address1).type(user.address1)
+        cy.get(this.selectors.address2).type(user.address2)
+        cy.get(this.selectors.country).select(user.country)
+        cy.get(this.selectors.state).type(user.state)
+        cy.get(this.selectors.city).type(user.city)
+        cy.get(this.selectors.zipcode).type(user.zipcode)
+        cy.get(this.selectors.mobileno).type(user.mobileno)
         cy.get(this.selectors.AccCreate).click()
 
 
@@ -77,9 +75,9 @@ export default class AExercise {
     validatetext(locators, text) {
         cy.get(locators).should('contain', text)
     }
-    LoginToYourAccount(data2) {
-        cy.get(this.selectors.loginemail).type(data2.useremail)
-        cy.get(this.selectors.loginpassword).type(data2.password)
+    LoginToYourAccount(user) {
+        cy.get(this.selectors.loginemail).type(user.useremail)
+        cy.get(this.selectors.loginpassword).type(user.password)
         cy.get(this.selectors.login).click()
 
     }
